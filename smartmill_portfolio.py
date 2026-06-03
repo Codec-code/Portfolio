@@ -138,19 +138,18 @@ st.sidebar.markdown("*Busitema University, Uganda*")
 st.sidebar.divider()
 
 pages = {
-    "🏠  Overview":             "overview",
-    "📍  Field Study":          "field",
-    "🔧  System Architecture":  "arch",
-    "📡  Live Signal Demo":     "signal",
-    "🤖  ML Pipeline":          "ml",
-    "🛠️  Skills & Stack":       "skills",
+    "  Overview":             "overview",
+    "  Field Study":          "field",
+    "  System Architecture":  "arch",
+    "  Live Signal Demo":     "signal",
+    "  ML Pipeline":          "ml",
+    "  Skills & Stack":       "skills",
 }
 selection = st.sidebar.radio("Navigate", list(pages.keys()), label_visibility="collapsed")
 page = pages[selection]
 
 st.sidebar.divider()
-st.sidebar.caption("SmartMill Uganda — Phase 1 Complete")
-st.sidebar.caption("Phase 2: Prototype assembly in progress")
+st.sidebar.caption("SmartMill Uganda")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE: OVERVIEW
@@ -184,7 +183,7 @@ if page == "overview":
         - **Solar-only power** with LiFePO₄ backup
         - **2G/GSM-only connectivity**
         - **Operator literacy constraints** (SMS alerts, not dashboards)
-        - **< USD 80 BOM cost**
+        - **Low-cost hardware** 
         """)
     with c2:
         st.markdown("### The Solution")
@@ -202,7 +201,7 @@ if page == "overview":
         designed specifically for operator trust in a low-connectivity rural context.
         """)
 
-    st.info("👉 Use the sidebar to explore field data, live signal demos, and the ML pipeline interactively.")
+    st.info(" Use the sidebar to explore field data, live signal demos, and the ML pipeline interactively.")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # PAGE: FIELD STUDY
@@ -440,7 +439,7 @@ elif page == "signal":
 
         st.pyplot(fig, use_container_width=True)
 
-    st.info("💡 **Notice:** Bearing degradation → kurtosis jumps above 3 as impulses appear. "
+    st.info("**Notice:** Bearing degradation → kurtosis jumps above 3 as impulses appear. "
             "Misalignment → the 2× harmonic (50 Hz) dominates the FFT. "
             "These are the exact signatures measured at M02 and M03 in the field.")
 
@@ -600,7 +599,7 @@ elif page == "skills":
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown("### 🔩 Hardware & Embedded")
+        st.markdown("###  Hardware & Embedded")
         skills_hw = {
             "ESP32 / MicroPython": 85,
             "Circuit design (sensor integration)": 75,
@@ -613,7 +612,7 @@ elif page == "skills":
             st.progress(level)
 
     with col2:
-        st.markdown("### 🧠 Machine Learning & Data")
+        st.markdown("###  Machine Learning & Data")
         skills_ml = {
             "Python (NumPy / SciPy / Pandas)": 90,
             "scikit-learn (IF, RF, SVM)": 85,
@@ -626,7 +625,7 @@ elif page == "skills":
             st.progress(level)
 
     with col3:
-        st.markdown("### ☁️ Cloud & Frontend")
+        st.markdown("###  Cloud & Frontend")
         skills_cloud = {
             "AWS IoT Core / Lambda / DynamoDB": 75,
             "AWS SNS (SMS alerting)": 70,
@@ -648,10 +647,9 @@ elif page == "skills":
             "This Streamlit Portfolio App",
             "System Architecture SVG",
             "Hardware Block Diagram",
-            "Physical Prototype (in progress)",
         ],
-        "Format":      ["DOCX/PDF", "Python (.py)", "React (.jsx)", "Python (.py)", "SVG", "SVG", "Physical + Photo"],
-        "Status":      ["✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete", "🔄 Phase 2"],
+        "Format":      ["DOCX/PDF", "Python (.py)", "React (.jsx)", "Python (.py)", "SVG", "SVG"],
+        "Status":      ["✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete", "✅ Complete"],
         "Demonstrates": [
             "Research methodology, FMEA, ISO 10816",
             "Signal physics, FFT, ML pipeline (sklearn)",
@@ -659,17 +657,14 @@ elif page == "skills":
             "Python depth, ML intuition, communication",
             "Systems architecture communication",
             "Hardware design literacy",
-            "Hands-on prototype build",
         ],
     })
     st.dataframe(artefacts, use_container_width=True, hide_index=True)
 
     st.divider()
-    st.markdown("### 🎓 About This Project")
+    st.markdown("###  About This Project")
     st.markdown("""
     SmartMill Uganda is a final-year capstone project at **Busitema University, Department of Computer Engineering and Informatics**.
-    It is being developed as a real deployable system — not a purely academic exercise.
-    Phase 1 (field study + simulation + architecture) is complete. Phase 2 (prototype assembly) is underway.
 
     The project targets rural grain mill operators in Eastern Uganda and is designed to be
     deployable at a BOM cost of under USD 80, powered entirely by solar, and operable over 2G.
